@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<head>
+    <title>THÔNG TIN CÁ NHÂN</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/pdfmake.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.0/html2canvas.min.js"></script>
+    <script src="script.js" type="text/javascript"></script>
+
+
+    <script>
+        function exportToPdf() {
+
+            var element = document.body;
+
+            html2canvas(element).then(function (canvas) {
+                var imgData = canvas.toDataURL("image/png");
+                var docDefinition = {
+                    content: [
+                        {
+                            image: imgData,
+                            width: 500,
+                        },
+                    ],
+                };
+                pdfMake.createPdf(docDefinition).download('exported_document.pdf');
+            });
+
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="main-title">
+        <h1 class="inline">THÔNG TIN CÁ NHÂN</h1>
+        <button class="inline fas fa-file-pdf" onclick="exportToPdf()"></button>
+    </div>
+    <div class="group-item offset-md-3 col-md-6">
+        <div class="header">
+            <span class="group-title">Thông tin sinh viên_20215408</span>
+            <span class="button-group">
+                <button id="add-info-button" onclick="AddInfoItem(this.parentNode.parentNode.parentNode)">Add Info
+                    Item</button>
+                <button id="add-group-button" onclick="AddGroupItem()">Add Group Item</button>
+            </span>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,45 @@
+.group-item {
+  border: 2px solid orange;
+  padding: 10px;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.group-title {
+  color: blue;
+  font-weight: bold;
+}
+
+
+.inline {
+  display: inline-block;
+}
+
+.main-title {
+  text-align: center;
+}
+
+label {
+  margin-left: 10px;
+}
+
+input {
+  margin-left: 20px;
+}
+
+.fas {
+  margin-left: 20px;
+}
+
+#add-info-button {
+  margin-left: 20px;
+}
+
+#add-group-button {
+  margin-left: 20px;
+}
